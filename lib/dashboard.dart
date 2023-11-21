@@ -9,11 +9,6 @@ import 'package:ack_waithaka/vicars_desk.dart';
 import 'package:ack_waithaka/zones.dart';
 import 'package:flutter/material.dart';
 import 'package:ack_waithaka/main.dart';
-// import 'package:button_animations/button_animations.dart';
-// import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-
-
-
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -50,7 +45,7 @@ class DashboardScreen extends StatelessWidget {
                   DashboardCard(title: 'Notices', icon: Icons.notifications),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 2),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -68,7 +63,7 @@ class DashboardScreen extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 2),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -157,69 +152,82 @@ class DashboardCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6),
       ),
-      child: InkWell(
-        onTap: () {
-          if (title == 'Feedback') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const FeedbackScreen()),
-            );
-          }
-          if (title == 'Zones') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ZonesScreen()),
-            );
-          }
-          if (title == 'Church Registration') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RegistrationScreen()),
-            );
-          }
-          if (title == 'Vicars Desk') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  VicarsDeskPage()),
-            );
-          }
-          if (title == 'Church Live Video') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const VideoPage()),
-            );
-          }
-          if (title == 'Notices') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const NotificationPage()),
-            );
-          }
-          if (title == 'Departments') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const DepartmentScreen()),
-            );
-          }
-        },
+     child: InkWell(
+onTap: () {
+if (title == 'Feedback') {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => const FeedbackScreen()),
+);
+}
+if (title == 'Zones') {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => const ZonesScreen()),
+);
+}
+if (title == 'Church Registration') {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => const RegistrationScreen()),
+);
+}
+if (title == 'Vicars Desk') {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => VicarsDeskPage()),
+);
+}
+if (title == 'Church Live Video') {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => const VideoPage()),
+);
+}
+if (title == 'Notices') {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => const NotificationPage()),
+);
+}
+if (title == 'Departments') {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => const DepartmentScreen()),
+);
+}
+},
         child: Transform(
-          transform: Matrix4.identity()..setEntry(3, 2, 0.001)..rotateX(0.1),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon, size: 30, color: customColor),
-              const SizedBox(height: 3),
-              Text(
-                title,
-                style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.001) // Add perspective
+            ..rotateY(0.01), // Rotate along the Y-axis
+          child: Card(
+            elevation: 8, // Increased elevation for depth perception
+            color: Colors.white, // Replace with your desired color
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, size: 30, color: customColor),
+                  const SizedBox(height: 3),
+                  Text(
+                    title,
+                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
 
 class DashboardButton extends StatelessWidget {
   final String title;
@@ -232,33 +240,52 @@ class DashboardButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-Widget build(BuildContext context) {
-  return SizedBox(
-  height: 70,
-  child: InkWell(
-    onTap: onTap, 
-    child: Card(
-      elevation: 10,
-      color: customColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(60),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Center(
-          child: Text(
-            title,
-            style: const TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(10),
+      height: 70,
+      child: InkWell(
+        onTap: onTap,
+        child: Transform(
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.01) 
+            ..rotateX(0.01),
+  
+            child: 
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                        color: const Color.fromRGBO(241, 203, 105, 1.0),
+                    ),
+                          child: Card(
+                  elevation: 5, 
+                  color: Colors.red.withOpacity(0.2), 
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(
+                      color: customColor, 
+                      width: 3,
+                    ),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    child: Center(
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
             ),
-          ),
         ),
       ),
-    ),
-  ),
-);
+    );
+  }
 }
 
-  }
 
