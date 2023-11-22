@@ -42,6 +42,8 @@ dependencies:
   button_animations: ^2.0.0+3
   flutter_neumorphic: ^3.0.3
   flat_3d_button: ^1.0.3
+  icon_forest: ^1.1.8
+
 
 dev_dependencies:
   flutter_test:

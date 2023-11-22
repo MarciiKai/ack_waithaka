@@ -9,6 +9,8 @@ import 'package:ack_waithaka/vicars_desk.dart';
 import 'package:ack_waithaka/zones.dart';
 import 'package:flutter/material.dart';
 import 'package:ack_waithaka/main.dart';
+// import 'package:icons_plus/icons_plus.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -39,9 +41,9 @@ class DashboardScreen extends StatelessWidget {
               DashboardGrid(
                 color: Colors.purple.withOpacity(0.2),
                 cards: const [
-                  DashboardCard(title: 'Church Live Video', icon: Icons.video_camera_front),
+                  DashboardCard(title: 'Church Live Video', icon: Icons.book_online),
                   DashboardCard(title: 'Church Audio Stream', icon: Icons.audiotrack),
-                  DashboardCard(title: 'Vicars Desk', icon: Icons.notifications_active),
+                  DashboardCard(title: 'Vicars Desk', icon: Icons.border_inner),
                   DashboardCard(title: 'Notices', icon: Icons.notifications),
                 ],
               ),

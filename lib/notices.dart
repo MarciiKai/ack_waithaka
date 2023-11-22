@@ -1,21 +1,30 @@
+// notices.dart
 
+import 'package:ack_waithaka/main.dart';
 import 'package:flutter/material.dart';
+import 'package:ack_waithaka/departmentsNotification.dart';
+import 'package:ack_waithaka/eventsNotifications.dart';
 
 class NotificationPage extends StatefulWidget {
-  // ignore: use_key_in_widget_constructors
-  const NotificationPage({Key? key});
+  const NotificationPage({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _NotificationPageState createState() => _NotificationPageState();
 }
 
 class _NotificationPageState extends State<NotificationPage> {
-  List<String> notifications = [];
+  List<NotificationItem> departmentNotifications = [];
+  List<NotificationItem> upcomingEventsNotifications = [];
 
-  void postNotification(String notification) {
+  void postDepartmentNotification(String department, String event) {
     setState(() {
-      notifications.add(notification);
+      departmentNotifications.add(NotificationItem(department: department, event: event));
+    });
+  }
+
+  void postEventNotification(String department, String event) {
+    setState(() {
+      upcomingEventsNotifications.add(NotificationItem(department: department, event: event));
     });
   }
 
@@ -25,53 +34,65 @@ class _NotificationPageState extends State<NotificationPage> {
       appBar: AppBar(
         title: const Text('Notification Page'),
       ),
-      body: ListView.builder(
-        itemCount: 5, 
-        itemBuilder: (BuildContext context, int index) {
-          return NotificationCard(
-            height:500,
-            key: ValueKey(index),
-            index: index,
-            notification: notifications.length > index ? notifications[index] : '',
-          );
-        },
+      backgroundColor: Color.fromARGB(255, 226, 158, 238),
+      body: Column(
+        children: [
+          _buildNotificationCard(
+            title: 'Department Notifications',
+            notifications: departmentNotifications,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const DepartmentDetailsPage()));
+            },
+            height: 200,
+            padding: EdgeInsets.all(20),
+          ),
+          _buildNotificationCard(
+            title: 'Upcoming Events Notifications',
+            notifications: upcomingEventsNotifications,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetailsPage()));
+            },
+            height: 200,
+            padding: EdgeInsets.all(20),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          postNotification('New Notification');
-        },
-        child: const Icon(Icons.add),
+    );
+  }
+
+  Widget _buildNotificationCard({
+    required String title,
+    required List<NotificationItem> notifications,
+    required void Function() onTap,
+    required double height,
+    required EdgeInsets padding,
+  }) {
+    return Card(
+      elevation: 5.0, // Add elevation for a slight shadow
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0), // Add rounded corners
+      ),
+      color: Colors.white,
+      child: Container(
+        height: height,
+        padding: padding,
+        child: Center(
+          child: ListTile(
+            title: Text(
+              title,
+              style: TextStyle(color: customColor, fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            onTap: onTap,
+          ),
+        ),
       ),
     );
   }
 }
 
-class NotificationCard extends StatelessWidget {
-  final int index;
-  final String notification;
+class NotificationItem {
+  final String department;
+  final String event;
 
-  // ignore: use_key_in_widget_constructors
-  const NotificationCard({ Key? key, required this.index, required this.notification, required int height});
-
-  @override
-  Widget build(BuildContext context) {
-    List<Color> colors = [
-      Colors.blue,
-      Colors.green,
-      Colors.purple,
-      Colors.orange,
-      Colors.red,
-      Colors.yellow,
-      Colors.deepPurple,
-    ];
-
-    return Card(
-      color: colors[index % colors.length],
-      child: ListTile(
-        title: Text('Card $index'),
-        subtitle: Text(notification), 
-      ),
-    );
-  }
-  
+  NotificationItem({required this.department, required this.event});
 }

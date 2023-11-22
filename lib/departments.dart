@@ -19,12 +19,12 @@ class DepartmentScreen extends StatelessWidget {
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
         children: const [
-          DepartmentCard('Children Ministry', Icons.child_care_sharp),
+          DepartmentCard('Child-mothers-kama', Icons.child_care_sharp),
           DepartmentCard('Mothers Union', Icons.woman_2_outlined),
-          DepartmentCard('Bible Study', Icons.library_books),
-          DepartmentCard('Youth Ministry', Icons.woman_rounded),
-          DepartmentCard('Personnel', Icons.people),
-          DepartmentCard('Peace and Justice', Icons.favorite),
+          // DepartmentCard('Bible Study', Icons.library_books),
+          // DepartmentCard('Youth Ministry', Icons.woman_rounded),
+          // DepartmentCard('Personnel', Icons.people),
+          // DepartmentCard('Peace and Justice', Icons.favorite),
         ],
       ),
     );
