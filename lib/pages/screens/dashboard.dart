@@ -43,7 +43,7 @@ class DashboardScreen extends StatelessWidget {
                 color: Colors.purple.withOpacity(0.2),
                 cards: const [
                   DashboardCard(title: 'Church Live Video', icon: Icons.video_file),
-                  DashboardCard(title: 'Church Audio Stream', icon: Icons.audiotrack),
+                  DashboardCard(title: 'Church Live Audio', icon: Icons.audiotrack),
                   DashboardCard(title: 'Vicars Desk', icon: Icons.library_books_outlined),
                   DashboardCard(title: 'Notices', icon: Icons.notifications),
                 ],
@@ -219,7 +219,7 @@ MaterialPageRoute(builder: (context) => const DepartmentScreen()),
                   const SizedBox(height: 3),
                   Text(
                     title,
-                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black),
+                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
                   ),
                 ],
               ),
@@ -276,7 +276,7 @@ class DashboardButton extends StatelessWidget {
                       child: Text(
                         title,
                         style: const TextStyle(
-                          fontSize: 15,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),

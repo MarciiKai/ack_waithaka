@@ -51,7 +51,7 @@ class DepartmentCard extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               title,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromRGBO(241, 203, 105, 1.0)),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
             ),
           ],
         ),

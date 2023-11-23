@@ -46,7 +46,7 @@ class _FinancialSupportPageState extends State<FinancialSupportPage> {
                  const SizedBox(height: 16.0),
                   Text(
                     title,
-                    style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8.0),
                   Text(description),

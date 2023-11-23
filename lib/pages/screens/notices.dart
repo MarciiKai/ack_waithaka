@@ -43,6 +43,7 @@ class _NotificationPageState extends State<NotificationPage> {
               description: 'Receive updates from various departments.',
               notifications: departmentNotifications,
               onTap: () {
+                // Example: Navigating to DepartmentDetailsPage
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const DepartmentDetailsPage()));
               },
               height: 200,
@@ -54,6 +55,7 @@ class _NotificationPageState extends State<NotificationPage> {
               description: 'Stay informed about upcoming events and activities.',
               notifications: upcomingEventsNotifications,
               onTap: () {
+                // Example: Navigating to EventDetailsPage
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const EventDetailsPage()));
               },
               height: 200,
@@ -80,25 +82,27 @@ class _NotificationPageState extends State<NotificationPage> {
         borderRadius: BorderRadius.circular(20.0),
       ),
       color: Colors.white,
-      child: Container(
-        height: height,
-        padding: padding,
-        child: Center(
-          child: ListTile(
-            leading: Icon(
-              icon,
-              size: 40,
-              color: customColor,
+      child: InkWell(
+        onTap: onTap, // Use InkWell for tap effect
+        child: Container(
+          height: height,
+          padding: padding,
+          child: Center(
+            child: ListTile(
+              leading: Icon(
+                icon,
+                size: 40,
+                color: customColor,
+              ),
+              title: Text(
+                title,
+                style: const TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                description,
+                style: TextStyle(color: Colors.grey, fontSize: 14),
+              ),
             ),
-            title: Text(
-              title,
-              style: TextStyle(color: customColor, fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            subtitle: Text(
-              description,
-              style: TextStyle(color: Colors.grey, fontSize: 14),
-            ),
-            onTap: onTap,
           ),
         ),
       ),
@@ -112,3 +116,5 @@ class NotificationItem {
 
   NotificationItem({required this.department, required this.event});
 }
+
+
