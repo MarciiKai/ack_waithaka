@@ -23,7 +23,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notification Page'),
+        title: const Text('Upcoming Events Notifications'),
       ),
       body: ListView.builder(
         itemCount: 5, 

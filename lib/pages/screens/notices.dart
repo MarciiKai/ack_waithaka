@@ -1,5 +1,3 @@
-// notices.dart
-
 import 'package:ack_waithaka/main.dart';
 import 'package:flutter/material.dart';
 import 'package:ack_waithaka/pages/notifications/departmentsNotification.dart';
@@ -35,42 +33,51 @@ class _NotificationPageState extends State<NotificationPage> {
         title: const Text('Notification Page'),
       ),
       backgroundColor: Color.fromARGB(255, 226, 158, 238),
-      body: Column(
-        children: [
-          _buildNotificationCard(
-            title: 'Department Notifications',
-            notifications: departmentNotifications,
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const DepartmentDetailsPage()));
-            },
-            height: 200,
-            padding: EdgeInsets.all(20),
-          ),
-          _buildNotificationCard(
-            title: 'Upcoming Events Notifications',
-            notifications: upcomingEventsNotifications,
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetailsPage()));
-            },
-            height: 200,
-            padding: EdgeInsets.all(20),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildNotificationCard(
+              title: 'Department Notifications',
+              icon: Icons.group,
+              description: 'Receive updates from various departments.',
+              notifications: departmentNotifications,
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const DepartmentDetailsPage()));
+              },
+              height: 200,
+              padding: EdgeInsets.all(20),
+            ),
+            _buildNotificationCard(
+              title: 'Upcoming Events Notifications',
+              icon: Icons.event,
+              description: 'Stay informed about upcoming events and activities.',
+              notifications: upcomingEventsNotifications,
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const EventDetailsPage()));
+              },
+              height: 200,
+              padding: const EdgeInsets.all(20),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildNotificationCard({
     required String title,
+    required IconData icon,
+    required String description,
     required List<NotificationItem> notifications,
     required void Function() onTap,
     required double height,
     required EdgeInsets padding,
   }) {
     return Card(
-      elevation: 5.0, // Add elevation for a slight shadow
+      elevation: 5.0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0), // Add rounded corners
+        borderRadius: BorderRadius.circular(20.0),
       ),
       color: Colors.white,
       child: Container(
@@ -78,9 +85,18 @@ class _NotificationPageState extends State<NotificationPage> {
         padding: padding,
         child: Center(
           child: ListTile(
+            leading: Icon(
+              icon,
+              size: 40,
+              color: customColor,
+            ),
             title: Text(
               title,
               style: TextStyle(color: customColor, fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text(
+              description,
+              style: TextStyle(color: Colors.grey, fontSize: 14),
             ),
             onTap: onTap,
           ),

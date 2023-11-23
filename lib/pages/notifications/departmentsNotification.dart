@@ -23,7 +23,7 @@ class _DepartmentDetailsPageState extends State<DepartmentDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notification Page'),
+        title: const Text('Department Notifications'),
       ),
       body: ListView.builder(
         itemCount: 5, 
