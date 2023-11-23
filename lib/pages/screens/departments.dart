@@ -1,4 +1,8 @@
 import 'package:ack_waithaka/pages/register/childRegister.dart';
+import 'package:ack_waithaka/pages/register/choirRegister.dart';
+import 'package:ack_waithaka/pages/register/kamaRegister.dart';
+import 'package:ack_waithaka/pages/register/mothersRegister.dart';
+import 'package:ack_waithaka/pages/register/praiseRegister.dart';
 import 'package:flutter/material.dart';
 import 'package:ack_waithaka/pages/screens/main.dart';
 
@@ -23,16 +27,16 @@ class DepartmentScreen extends StatelessWidget {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const ChildRegistrationScreen()));
           }),
           DepartmentCard('MOTHERS', Icons.woman_2_outlined, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const MothersDepartmentDetailsPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const MothersRegistrationScreen()));
           }),
           DepartmentCard('KAMA', Icons.book, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const KamaDepartmentDetailsPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const KamaRegistrationScreen()));
           }),
           DepartmentCard('CHOIR', Icons.music_video_outlined, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const ChoirDepartmentDetailsPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ChoirRegistrationScreen()));
           }),
           DepartmentCard('PRAISE & WORSHIP', Icons.music_note, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const PraiseWorshipDepartmentDetailsPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const PraiseRegistrationScreen()));
           }),
         ],
       ),
