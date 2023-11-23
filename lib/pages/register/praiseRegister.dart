@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ChildRegistrationScreen extends StatefulWidget {
-  const ChildRegistrationScreen({super.key});
+class PraiseRegistrationScreen extends StatefulWidget {
+  const PraiseRegistrationScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _ChildRegistrationPageState createState() => _ChildRegistrationPageState();
+  _PraiseRegistrationPageState createState() => _PraiseRegistrationPageState();
 }
 
-class _ChildRegistrationPageState extends State<ChildRegistrationScreen> {
+class _PraiseRegistrationPageState extends State<PraiseRegistrationScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
 
