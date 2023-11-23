@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ack_waithaka/dashboard.dart';
+import 'package:ack_waithaka/pages/screens/dashboard.dart';
 
 MaterialColor customColor = const MaterialColor(0xFFF1CB69, {
   50: Color.fromRGBO(241, 203, 105, 0.1),

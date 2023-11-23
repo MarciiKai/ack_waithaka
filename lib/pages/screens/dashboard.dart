@@ -1,16 +1,17 @@
-import 'package:ack_waithaka/church_support.dart';
-import 'package:ack_waithaka/departments.dart';
-import 'package:ack_waithaka/feedback.dart';
-import 'package:ack_waithaka/live_video.dart';
-import 'package:ack_waithaka/notices.dart';
-import 'package:ack_waithaka/preachings.dart';
-import 'package:ack_waithaka/register.dart';
-import 'package:ack_waithaka/vicars_desk.dart';
-import 'package:ack_waithaka/zones.dart';
+import 'package:ack_waithaka/pages/screens/church_support.dart';
+import 'package:ack_waithaka/pages/screens/feedback.dart';
+import 'package:ack_waithaka/pages/screens/live_video.dart';
+import 'package:ack_waithaka/pages/screens/register.dart';
 import 'package:flutter/material.dart';
-import 'package:ack_waithaka/main.dart';
-// import 'package:icons_plus/icons_plus.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:ack_waithaka/pages/screens/preachings.dart';
+import 'package:ack_waithaka/pages/screens/vicars_desk.dart';
+import 'package:ack_waithaka/pages/screens/zones.dart';
+import 'package:ack_waithaka/pages/screens/departments.dart';
+import 'package:ack_waithaka/pages/screens/main.dart';
+import 'package:ack_waithaka/pages/screens/notices.dart';
+// import 'package:cupertino_icons/cupertino_icons.dart';
+
+
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -41,9 +42,9 @@ class DashboardScreen extends StatelessWidget {
               DashboardGrid(
                 color: Colors.purple.withOpacity(0.2),
                 cards: const [
-                  DashboardCard(title: 'Church Live Video', icon: Icons.book_online),
+                  DashboardCard(title: 'Church Live Video', icon: Icons.video_file),
                   DashboardCard(title: 'Church Audio Stream', icon: Icons.audiotrack),
-                  DashboardCard(title: 'Vicars Desk', icon: Icons.border_inner),
+                  DashboardCard(title: 'Vicars Desk', icon: Icons.library_books_outlined),
                   DashboardCard(title: 'Notices', icon: Icons.notifications),
                 ],
               ),

@@ -1,9 +1,9 @@
 // notices.dart
 
-import 'package:ack_waithaka/main.dart';
+import 'package:ack_waithaka/pages/screens/main.dart';
 import 'package:flutter/material.dart';
-import 'package:ack_waithaka/departmentsNotification.dart';
-import 'package:ack_waithaka/eventsNotifications.dart';
+import 'package:ack_waithaka/pages/notifications/departmentsNotification.dart';
+import 'package:ack_waithaka/pages/notifications/eventsNotifications.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);

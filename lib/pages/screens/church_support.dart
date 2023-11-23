@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ack_waithaka/main.dart';
+import 'package:ack_waithaka/pages/screens/main.dart';
 
 class FinancialSupportPage extends StatefulWidget {
   const FinancialSupportPage({Key? key}) : super(key: key);
