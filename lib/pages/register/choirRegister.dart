@@ -24,7 +24,7 @@ class _ChoirRegistrationPageState extends State<ChoirRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Church Registration'),
+        title: const Text('Choir Department Registration'),
       ),
       body: Card(
         elevation: 4,

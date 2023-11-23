@@ -1,6 +1,6 @@
 // notices.dart
 
-import 'package:ack_waithaka/pages/screens/main.dart';
+import 'package:ack_waithaka/main.dart';
 import 'package:flutter/material.dart';
 import 'package:ack_waithaka/pages/notifications/departmentsNotification.dart';
 import 'package:ack_waithaka/pages/notifications/eventsNotifications.dart';

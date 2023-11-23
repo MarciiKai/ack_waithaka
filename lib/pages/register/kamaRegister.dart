@@ -24,7 +24,7 @@ class _KamaRegistrationPageState extends State<KamaRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Church Registration'),
+        title: const Text('Kama Department Registration'),
       ),
       body: Card(
         elevation: 4,

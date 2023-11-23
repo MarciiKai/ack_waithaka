@@ -24,7 +24,7 @@ class _MothersRegistrationPageState extends State<MothersRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Church Registration'),
+        title: const Text('Mothers Department Registration'),
       ),
       body: Card(
         elevation: 4,

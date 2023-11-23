@@ -7,7 +7,7 @@ import 'package:ack_waithaka/pages/screens/preachings.dart';
 import 'package:ack_waithaka/pages/screens/vicars_desk.dart';
 import 'package:ack_waithaka/pages/screens/zones.dart';
 import 'package:ack_waithaka/pages/screens/departments.dart';
-import 'package:ack_waithaka/pages/screens/main.dart';
+import 'package:ack_waithaka/main.dart';
 import 'package:ack_waithaka/pages/screens/notices.dart';
 // import 'package:cupertino_icons/cupertino_icons.dart';
 

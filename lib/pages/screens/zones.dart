@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ack_waithaka/pages/screens/main.dart';
+import 'package:ack_waithaka/main.dart';
 
 class ZonesScreen extends StatelessWidget {
   // ignore: use_key_in_widget_constructors

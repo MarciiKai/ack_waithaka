@@ -4,7 +4,7 @@ import 'package:ack_waithaka/pages/register/kamaRegister.dart';
 import 'package:ack_waithaka/pages/register/mothersRegister.dart';
 import 'package:ack_waithaka/pages/register/praiseRegister.dart';
 import 'package:flutter/material.dart';
-import 'package:ack_waithaka/pages/screens/main.dart';
+import 'package:ack_waithaka/main.dart';
 
 class DepartmentScreen extends StatelessWidget {
   // ignore: use_key_in_widget_constructors

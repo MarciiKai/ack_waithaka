@@ -24,7 +24,7 @@ class _PraiseRegistrationPageState extends State<PraiseRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Church Registration'),
+        title: const Text('Praise & Worship Department Registration'),
       ),
       body: Card(
         elevation: 4,
