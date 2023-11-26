@@ -18,23 +18,23 @@ class ZonesScreen extends StatelessWidget {
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
         children: const [
-          DepartmentCard('WAITHAKA'),
-          DepartmentCard('NDWARU'),
-          DepartmentCard('MITHONGWE'),
-          DepartmentCard('MUTHAMA'),
-          DepartmentCard('MUKARARA'),
-          DepartmentCard('ENGLISH'),
+          ZonesCard('WAITHAKA'),
+          ZonesCard('NDWARU'),
+          ZonesCard('MITHONGWE'),
+          ZonesCard('MUTHAMA'),
+          ZonesCard('MUKARARA'),
+          ZonesCard('ENGLISH'),
         ],
       ),
     );
   }
 }
 
-class DepartmentCard extends StatelessWidget {
+class ZonesCard extends StatelessWidget {
   final String title;
 
   // ignore: use_key_in_widget_constructors
-  const DepartmentCard(this.title);
+  const ZonesCard(this.title);
 
   @override
   Widget build(BuildContext context) {

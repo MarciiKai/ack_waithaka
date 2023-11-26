@@ -23,10 +23,10 @@ class DepartmentScreen extends StatelessWidget {
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
         children: [
-          DepartmentCard('CHILD', Icons.child_care_sharp, () {
+          DepartmentCard('CHILDREN MINISTRY', Icons.child_care_sharp, () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const ChildRegistrationScreen()));
           }),
-          DepartmentCard('MOTHERS', Icons.woman_2_outlined, () {
+          DepartmentCard('MOTHERS UNION', Icons.woman_2_outlined, () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const MothersRegistrationScreen()));
           }),
           DepartmentCard('KAMA', Icons.book, () {

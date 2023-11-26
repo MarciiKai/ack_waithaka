@@ -42,9 +42,9 @@ class DashboardScreen extends StatelessWidget {
               DashboardGrid(
                 color: Colors.purple.withOpacity(0.2),
                 cards: const [
-                  DashboardCard(title: 'Church Live Video', icon: Icons.video_file),
+                  DashboardCard(title: 'Church Live Video', icon: Icons.video_library),
                   DashboardCard(title: 'Church Live Audio', icon: Icons.audiotrack),
-                  DashboardCard(title: 'Vicars Desk', icon: Icons.library_books_outlined),
+                  DashboardCard(title: 'Vicars Desk', icon: Icons.library_books_sharp),
                   DashboardCard(title: 'Notices', icon: Icons.notifications),
                 ],
               ),
@@ -155,7 +155,17 @@ class DashboardCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6),
       ),
-     child: InkWell(
+        child: Transform(
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.001) 
+            ..rotateY(0.01), 
+          child: Card(
+            elevation: 8, 
+            color: Colors.white, 
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
+            ),
+                child: InkWell(
 onTap: () {
 if (title == 'Feedback') {
 Navigator.push(
@@ -200,16 +210,6 @@ MaterialPageRoute(builder: (context) => const DepartmentScreen()),
 );
 }
 },
-        child: Transform(
-          transform: Matrix4.identity()
-            ..setEntry(3, 2, 0.001) // Add perspective
-            ..rotateY(0.01), // Rotate along the Y-axis
-          child: Card(
-            elevation: 8, // Increased elevation for depth perception
-            color: Colors.white, // Replace with your desired color
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(6),
-            ),
             child: Container(
               padding: const EdgeInsets.all(10),
               child: Column(

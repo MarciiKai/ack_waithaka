@@ -54,7 +54,7 @@ class _PraiseRegistrationPageState extends State<PraiseRegistrationScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _register,
-              child: const Text('Register'),
+              child: const Text('Registration Request'),
             ),
           ],
         ),
