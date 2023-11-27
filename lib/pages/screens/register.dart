@@ -46,6 +46,8 @@ class _RegistrationPageState extends State<RegistrationScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Church Registration'),
+        backgroundColor: const Color.fromARGB(255, 214, 165, 156),
+        elevation: 2,
       ),
       body: Stack(
         children: [

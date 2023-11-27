@@ -73,7 +73,9 @@ class _ChoirRegistrationPageState extends State<ChoirRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Choir Department Registration'),
+        title: const Text('Choir Department Registration'),
+        backgroundColor: const Color.fromARGB(255, 214, 165, 156),
+        elevation: 2,
       ),
       body: Stack(
         children: [

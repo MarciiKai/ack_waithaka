@@ -42,11 +42,14 @@ class _ChildRegistrationPageState extends State<ChildRegistrationScreen> {
       clipper: ConcaveBackgroundClipper(),
       child: Container(
         height: 550,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color.fromARGB(255, 214, 165, 156), Color.fromARGB(255, 235, 208, 149)],
+            colors: [
+              Color.fromARGB(255, 214, 165, 156),
+                    Color.fromARGB(255, 235, 208, 149),
+               ],
           ),
         ),
       ),
@@ -73,8 +76,11 @@ class _ChildRegistrationPageState extends State<ChildRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Child Department Registration'),
+        title: const Text('Child Department Registration'),
+        backgroundColor: const Color.fromARGB(255, 214, 165, 156),
+        elevation: 2,
       ),
+    
       body: Stack(
         children: [
           _buildConcaveBackground(),

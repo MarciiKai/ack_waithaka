@@ -73,7 +73,9 @@ class _KamaRegistrationPageState extends State<KamaRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kama Department Registration'),
+        title: const Text('Kama Department Registration'),
+        backgroundColor: const Color.fromARGB(255, 214, 165, 156),
+        elevation: 2,
       ),
       body: Stack(
         children: [

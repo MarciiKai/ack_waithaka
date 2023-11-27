@@ -40,7 +40,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       appBar: AppBar(
         title: const Text('Feedback Page'),
         backgroundColor:const Color.fromARGB(255, 214, 165, 156),
-        elevation: 0,
+        elevation: 2,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

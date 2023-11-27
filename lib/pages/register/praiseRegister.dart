@@ -42,7 +42,7 @@ class _PraiseRegistrationPageState extends State<PraiseRegistrationScreen> {
       clipper: ConcaveBackgroundClipper(),
       child: Container(
         height: 550,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -73,7 +73,9 @@ class _PraiseRegistrationPageState extends State<PraiseRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Praise Department Registration'),
+        title: const Text('Praise Department Registration'),
+        backgroundColor: const Color.fromARGB(255, 214, 165, 156),
+        elevation: 2,
       ),
       body: Stack(
         children: [
