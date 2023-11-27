@@ -38,24 +38,30 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       appBar: AppBar(
         title: const Text('Feedback Page'),
       ),
-      body: ClipPath(
-        clipper: ConcaveBackgroundClipper(),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: const Offset(0, 3),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ClipPath(
+            clipper: ConcaveBackgroundClipper(),
+            child: Container(
+              height: 200, // Adjust the height as needed
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-          margin: const EdgeInsets.all(16),
-          child: Padding(
+          Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 TextField(
                   controller: _feedbackController,
@@ -83,7 +89,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               ],
             ),
           ),
-        ),
+        ],
       ),
     );
   }
