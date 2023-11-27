@@ -45,7 +45,7 @@ class ZonesScreen extends StatelessWidget {
     return ClipPath(
       clipper: ConcaveBackgroundClipper(),
       child: Container(
-        height: 250,
+        height: 550,
               decoration: BoxDecoration(
               gradient: const LinearGradient(
                   begin: Alignment.topCenter,

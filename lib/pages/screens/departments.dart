@@ -37,7 +37,7 @@ class DepartmentScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Departments'),
         backgroundColor:const Color.fromARGB(255, 214, 165, 156),
-        elevation: 0,
+        elevation: 2,
       ),
       body: Stack(
         children: [
@@ -52,7 +52,7 @@ class DepartmentScreen extends StatelessWidget {
     return ClipPath(
       clipper: ConcaveBackgroundClipper(),
       child: Container(
-        height: 250,
+        height: 550,
               decoration: BoxDecoration(
               gradient: const LinearGradient(
                   begin: Alignment.topCenter,
