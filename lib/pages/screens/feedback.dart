@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class ConcaveBackgroundClipper extends CustomClipper<Path> {
   @override
-  Path getClip(Size size) {
+ Path getClip(Size size) {
     final path = Path()
-      ..lineTo(0, size.height - 30)
-      ..quadraticBezierTo(size.width / 2, size.height + 30, size.width, size.height - 30)
+      ..moveTo(0, size.height)
       ..quadraticBezierTo(size.width / 3, size.height - 40, size.width / 2, size.height - 20)
-
+      ..quadraticBezierTo(2 * size.width / 3, size.height, size.width, size.height - 30)
       ..lineTo(size.width, 0)
+      ..lineTo(0, 0)
       ..close();
     return path;
   }
