@@ -1,6 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:ack_waithaka/main.dart';
 
+
+class ConcaveBackgroundClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path()
+      ..moveTo(0, size.height)
+      ..quadraticBezierTo(size.width / 3, size.height - 60, size.width / 2, size.height - 30)
+      ..quadraticBezierTo(2 * size.width / 3, size.height, size.width, size.height - 20)
+      ..lineTo(size.width, 0)
+      ..lineTo(0, 0)
+      ..close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
+  }
+}
 class ZonesScreen extends StatelessWidget {
   const ZonesScreen({Key? key}) : super(key: key);
 
@@ -10,7 +29,7 @@ class ZonesScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text('Zones'),
-        backgroundColor: Color.fromARGB(255, 214, 165, 156),
+        // backgroundColor: Color.fromARGB(255, 214, 165, 156),
         elevation: 0,
       ),
       body: Stack(
@@ -23,13 +42,16 @@ class ZonesScreen extends StatelessWidget {
   }
 
   Widget _buildConcaveBackground() {
-    return Container(
-      height: 150,
-      decoration: const BoxDecoration(
-        color:  Color.fromARGB(255, 214, 165, 156),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
+    return ClipPath(
+      clipper: ConcaveBackgroundClipper(),
+      child: Container(
+        height: 250,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color.fromARGB(255, 214, 165, 156), Color.fromARGB(255, 235, 208, 149)],
+          ),
         ),
       ),
     );
