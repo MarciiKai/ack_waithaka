@@ -1,77 +1,110 @@
+import 'package:flutter/material.dart';
+import 'package:ack_waithaka/main.dart';
 import 'package:ack_waithaka/pages/register/childRegister.dart';
 import 'package:ack_waithaka/pages/register/choirRegister.dart';
 import 'package:ack_waithaka/pages/register/kamaRegister.dart';
 import 'package:ack_waithaka/pages/register/mothersRegister.dart';
 import 'package:ack_waithaka/pages/register/praiseRegister.dart';
-import 'package:flutter/material.dart';
-import 'package:ack_waithaka/main.dart';
 
 class DepartmentScreen extends StatelessWidget {
-  // ignore: use_key_in_widget_constructors
-  const DepartmentScreen({Key? key});
+  const DepartmentScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 205, 156, 214),
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text('Departments'),
+        elevation: 0,
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        padding: const EdgeInsets.all(16),
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
+      body: Stack(
         children: [
-          DepartmentCard('CHILDREN MINISTRY', Icons.child_care_sharp, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const ChildRegistrationScreen()));
-          }),
-          DepartmentCard('MOTHERS UNION', Icons.woman_2_outlined, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const MothersRegistrationScreen()));
-          }),
-          DepartmentCard('KAMA', Icons.book, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const KamaRegistrationScreen()));
-          }),
-          DepartmentCard('CHOIR', Icons.music_video_outlined, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const ChoirRegistrationScreen()));
-          }),
-          DepartmentCard('PRAISE & WORSHIP', Icons.music_note, () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const PraiseRegistrationScreen()));
-          }),
+          _buildConcaveBackground(),
+          _buildGridView(context),
         ],
       ),
     );
   }
-}
 
-class DepartmentCard extends StatelessWidget {
-  final String title;
-  final IconData icon;
-  final VoidCallback onTap;
-
-  // Add a callback function to handle the tap event
-  // Constructor updated to include onTap callback
-  const DepartmentCard(this.title, this.icon, this.onTap, {Key? key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+  Widget _buildConcaveBackground() {
+    return Container(
+      height: 200,
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 205, 156, 214),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
+        ),
       ),
-      child: InkWell(
-        onTap: onTap, // Use the provided onTap callback
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 50, color: customColor),
-            const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+    );
+  }
+
+  Widget _buildGridView(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 100), // Adjust the height based on your needs
+        Container(
+          decoration: BoxDecoration(
+            // color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
             ),
-          ],
+          ),
+          child: GridView.count(
+            crossAxisCount: 2,
+            padding: const EdgeInsets.all(16),
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              _build3DCard('CHILDREN MINISTRY', Icons.child_care_sharp, () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const ChildRegistrationScreen()));
+              }),
+              _build3DCard('MOTHERS UNION', Icons.woman_2_outlined, () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const MothersRegistrationScreen()));
+              }),
+              _build3DCard('KAMA', Icons.book, () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const KamaRegistrationScreen()));
+              }),
+              _build3DCard('CHOIR', Icons.music_video_outlined, () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const ChoirRegistrationScreen()));
+              }),
+              _build3DCard('PRAISE & WORSHIP', Icons.music_note, () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const PraiseRegistrationScreen()));
+              }),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _build3DCard(String title, IconData icon, VoidCallback onTap) {
+    return Transform(
+      transform: Matrix4.identity()
+        ..setEntry(3, 2, 0.002)
+        ..rotateX(0.02),
+      child: Card(
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: InkWell(
+          onTap: onTap,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 50, color: customColor),
+              const SizedBox(height: 10),
+              Text(
+                title,
+                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
       ),
     );
