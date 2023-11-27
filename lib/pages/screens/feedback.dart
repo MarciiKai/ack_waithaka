@@ -7,6 +7,8 @@ class ConcaveBackgroundClipper extends CustomClipper<Path> {
     final path = Path()
       ..lineTo(0, size.height - 30)
       ..quadraticBezierTo(size.width / 2, size.height + 30, size.width, size.height - 30)
+      ..quadraticBezierTo(size.width / 3, size.height - 40, size.width / 2, size.height - 20)
+
       ..lineTo(size.width, 0)
       ..close();
     return path;
@@ -37,6 +39,8 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Feedback Page'),
+        backgroundColor:const Color.fromARGB(255, 214, 165, 156),
+        elevation: 0,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,8 +50,14 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
             child: Container(
               height: 200, // Adjust the height as needed
               decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
+              gradient: const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(255, 214, 165, 156),
+                    Color.fromARGB(255, 235, 208, 149),
+                  ],
+                ),                boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
@@ -66,7 +76,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 TextField(
                   controller: _feedbackController,
                   maxLines: 5,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: const TextStyle(fontSize: 16, color: Colors.black),
                   decoration: InputDecoration(
                     labelText: 'Feedback',
                     border: OutlineInputBorder(
@@ -83,6 +93,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
+                    fixedSize: const Size(100, 50)
                   ),
                   child: const Text('Submit Feedback'),
                 ),
