@@ -15,6 +15,7 @@ class DepartmentScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text('Departments'),
+        backgroundColor: const Color.fromARGB(255, 205, 156, 214),
         elevation: 0,
       ),
       body: Stack(
@@ -28,9 +29,9 @@ class DepartmentScreen extends StatelessWidget {
 
   Widget _buildConcaveBackground() {
     return Container(
-      height: 200,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 205, 156, 214),
+      height: 150,
+      decoration: const BoxDecoration(
+        color:  Color.fromARGB(255, 205, 156, 214),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),
@@ -43,9 +44,9 @@ class DepartmentScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 100), // Adjust the height based on your needs
+       const SizedBox(height: 100), // Adjust the height based on your needs
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             // color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30),
@@ -58,7 +59,7 @@ class DepartmentScreen extends StatelessWidget {
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               _build3DCard('CHILDREN MINISTRY', Icons.child_care_sharp, () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const ChildRegistrationScreen()));

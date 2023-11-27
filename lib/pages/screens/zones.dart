@@ -10,6 +10,7 @@ class ZonesScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text('Zones'),
+        backgroundColor: Color.fromARGB(255, 214, 165, 156),
         elevation: 0,
       ),
       body: Stack(
@@ -23,7 +24,7 @@ class ZonesScreen extends StatelessWidget {
 
   Widget _buildConcaveBackground() {
     return Container(
-      height: 200,
+      height: 150,
       decoration: const BoxDecoration(
         color:  Color.fromARGB(255, 214, 165, 156),
         borderRadius: BorderRadius.only(
@@ -38,7 +39,7 @@ class ZonesScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 100),
+      const SizedBox(height: 100),
         Container(
           decoration: const BoxDecoration(
             // color: Colors.white,
@@ -53,7 +54,7 @@ class ZonesScreen extends StatelessWidget {
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             children: const [
               ZonesCard('WAITHAKA'),
               ZonesCard('NDWARU'),
