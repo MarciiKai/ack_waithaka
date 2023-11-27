@@ -53,16 +53,24 @@ class DepartmentScreen extends StatelessWidget {
       clipper: ConcaveBackgroundClipper(),
       child: Container(
         height: 250,
-        decoration:const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromARGB(255, 214, 165, 156),
-               Color.fromARGB(255, 235, 208, 149),
-             ],
-          ),
-        ),
+              decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(255, 214, 165, 156),
+                    Color.fromARGB(255, 235, 208, 149),
+                  ],
+                ),             
+                   boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
       ),
     );
   }
